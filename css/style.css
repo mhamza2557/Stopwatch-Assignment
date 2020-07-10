@@ -1,0 +1,38 @@
+body {
+    text-align: center !important;
+}
+
+h1 {
+    font-size: 7rem !important;
+}
+
+h2 {
+    display: inline-block;
+    width: 20rem;
+    height: 12rem;
+    background-color: royalblue;
+    color: white;
+    font-size: 10rem !important;
+}
+
+button {
+    width: 20rem;
+    height: 12rem;
+    font-size: 5rem !important;
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 3rem !important;
+    }
+    h2 {
+        width: 5rem;
+        height: 4rem;
+        font-size: 3rem !important;
+    }
+    button {
+        width: 5rem;
+        height: 4rem;
+        font-size: 1.5rem !important;
+    }
+}
