@@ -19,6 +19,29 @@ button {
     width: 20rem;
     height: 12rem;
     font-size: 5rem !important;
+    font-weight: bold;
+}
+
+.blinking {
+    animation: blinkingText 1.2s infinite;
+}
+
+@keyframes blinkingText {
+    0% {
+        color: white;
+    }
+    49% {
+        color: white;
+    }
+    60% {
+        color: transparent;
+    }
+    99% {
+        color: transparent;
+    }
+    100% {
+        color: white;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -33,6 +56,6 @@ button {
     button {
         width: 5rem;
         height: 4rem;
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
     }
 }
