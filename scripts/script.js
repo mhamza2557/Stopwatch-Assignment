@@ -13,11 +13,13 @@ function timer() {
     getMsec.innerHTML = msec;
 
     if (msec >= 99) {
+        msec = 0;
+        getMsec.innerHTML = msec;
         sec++;
         getSec.innerHTML = sec;
-        msec = -1;
-    } else if (sec >= 59) {
-        sec = -1;
+    } else if (sec >= 60) {
+        sec = 0;
+        getSec.innerHTML = sec;
         min++;
         getMin.innerHTML = min;
     }
@@ -25,18 +27,33 @@ function timer() {
 
 function start() {
     interval = setInterval(timer, 10);
+
+    document.getElementById('min').classList.remove('blinking');
+    document.getElementById('sec').classList.remove('blinking');
+    document.getElementById('msec').classList.remove('blinking');
+
     document.getElementById('start').disabled = true;
     document.getElementById('pause').disabled = false;
 }
 
 function pause() {
     clearInterval(interval);
+
+    document.getElementById('min').classList.add('blinking');
+    document.getElementById('sec').classList.add('blinking');
+    document.getElementById('msec').classList.add('blinking');
+
     document.getElementById('start').disabled = false;
     document.getElementById('pause').disabled = true;
 }
 
 function reset() {
     clearInterval(interval)
+
+    document.getElementById('min').classList.remove('blinking');
+    document.getElementById('sec').classList.remove('blinking');
+    document.getElementById('msec').classList.remove('blinking');
+
     min = 0;
     sec = 0;
     msec = 0;
